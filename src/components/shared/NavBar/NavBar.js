@@ -6,7 +6,7 @@ const NavBar = () => {
         <div className="w-100 bg-light">
             <nav className="ms-1 navbar navbar-expand-lg navbar-light ">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <NavLink className="navbar-brand" to="/home"><span className="text-primary">TRAAVEL</span> TOUR</NavLink>
                     {/* NavBar button */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

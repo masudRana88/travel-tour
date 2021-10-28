@@ -1,0 +1,32 @@
+.he-img-1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://user-images.githubusercontent.com/86189450/139315221-a8256102-0014-44b9-906c-a546dea675c1.jpg");
+    height: 100vh;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.he-img-2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://user-images.githubusercontent.com/86189450/139315230-8267efe6-7822-4cf6-8751-282046ebe103.jpg");
+    height: 100vh;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.he-img-3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://user-images.githubusercontent.com/86189450/139315232-4719e370-6852-43c4-bbc9-dbe04bfc0ef5.jpg");
+    height: 100vh;
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-contant{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
