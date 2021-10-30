@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 const NavBar = () => {
+    const {user,logOut, singInWithGoogle} = useAuth()
     return (
         <div className="w-100 bg-light">
             <nav className="ms-1 navbar navbar-expand-lg navbar-light ">
@@ -18,13 +20,13 @@ const NavBar = () => {
                     <NavLink to="/home" className="nav-link">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink to="/destinations" className="nav-link ">Destinations</NavLink>
+                    <NavLink to="/destinations" className="nav-link ">Tour List</NavLink>
                     </li>
                     <li className="nav-item">
                     <NavLink to="/my-booking" className="nav-link ">My Booking</NavLink>
                     </li>
                  </ul>
-                    <button className="btn">Login</button>
+                    <button className="btn" onClick={singInWithGoogle}>Login</button>
                     <Link to="/admin"><button className="btn ms-2">Admin</button></Link>
                 </div>
             </div>

@@ -1,13 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useDestination from '../../../Hooks/useDestination';
+import { useContext } from 'react/cjs/react.development';
+import { DestinationContext } from '../../../Context/DestinationProvider/DestinationProvider';
+
 
 const Destinstion = () => {
-    const { destinations } = useDestination();
+    const { destinations } = useContext(DestinationContext);
     console.log(destinations)
     return (
         <div className="container mt-lg-5 mt-md-3 mt-2">
             <div className="row">
+                <h1>Popular Tour Packages</h1>
                 {
                     destinations.map(destination => <div className="col-4 g-4">
                         <div class="card">

@@ -13,10 +13,15 @@ import NavBar from './components/shared/NavBar/NavBar';
 import Admin from './components/pages/Admin/Admin';
 import BookNow from './components/pages/BookNow/BookNow';
 import UpdateContext from './Context/UpdateContext/UpdateContext';
+import DestinationProvider from './Context/DestinationProvider/DestinationProvider';
+import Footer from './components/shared/Footer/Footer';
+import AuthProvider from './Context/AuthProvider/AuthProvider';
 
 function App() {
   return (
     <>
+      <AuthProvider>
+      <DestinationProvider>
       <UpdateContext>
         <Router>
         <NavBar></NavBar>
@@ -39,9 +44,12 @@ function App() {
           <Route exact path="/booking/:id">
             <BookNow></BookNow>
           </Route>
-        </Switch>
-      </Router>
+          </Switch>
+            <Footer></Footer>
+          </Router>
       </UpdateContext>
+      </DestinationProvider>
+      </AuthProvider>
     </>
   );
 }

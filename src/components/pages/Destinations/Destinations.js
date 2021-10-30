@@ -1,9 +1,10 @@
 import React from 'react';
+import Destinstion from '../../shared/Destinstion/Destinstion';
 
 const Destinations = () => {
     return (
         <div>
-            this is Destinations
+            <Destinstion></Destinstion>
         </div>
     );
 };

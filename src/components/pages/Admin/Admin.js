@@ -1,14 +1,14 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { useForm } from "react-hook-form";
+import { useController, useForm } from "react-hook-form";
+import { DestinationContext } from '../../../Context/DestinationProvider/DestinationProvider';
 import { UpdateFieldContext } from '../../../Context/UpdateContext/UpdateContext';
-import useDestination from '../../../Hooks/useDestination';
 import UpdateField from './UpdateFields/UpdateField';
 
 const Admin = () => {
     const [addDestination, setAddDestination] = useState(true);
     const [editDestination, setEditDestination] = useState(false);
-    const { destinations, setDestinations } = useDestination();
+    const { destinations, setDestinations } = useContext(DestinationContext);
     const { isUpdate, hendleUpdate } = useContext(UpdateFieldContext);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     // hendel OnSubmit
@@ -39,7 +39,7 @@ const Admin = () => {
         .then(function (response) {
             // handle success
             console.log(response.status === 200);
-            const reminder = destinations.filter(destination => destination._id !== id)
+            const reminder = destinations.filter(destination => destination._id !== id);
             setDestinations(reminder);
         })
         }
@@ -48,8 +48,8 @@ const Admin = () => {
         <div className="container-fluid row">
             <div className="col-lg-4 col-md-4 col-12 mt-5">
                 <ul class="list-group">
-                    <button onClick={hendleAddDestination} class={addDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'} aria-current="true">Add Destination</button>
-                    <button onClick={hendleEditDestination} class={editDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'}>Edit Destination</button>
+                    <button onClick={hendleAddDestination} class={addDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'} aria-current="true">Add Tour</button>
+                    <button onClick={hendleEditDestination} class={editDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'}>Edit Tour</button>
                 </ul>
             </div>
             <div className="col-lg-8 col-md-8 col-12">
@@ -59,7 +59,7 @@ const Admin = () => {
                        addDestination && <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
                              {/* Name */}
                         <div class="mb-3">
-                            <label class="form-label">Destination name</label>
+                            <label class="form-label">Tour name</label>
                             <input type="text" defaultValue="" {...register("name", { required: true })} placeholder="Type Destination name" class="form-control"/>
                         </div>
                             {/* description */}
@@ -81,7 +81,7 @@ const Admin = () => {
                     {
                         editDestination && <div className="row mt-5">
                             {
-                                isUpdate && <UpdateField></UpdateField>        
+                                isUpdate && <UpdateField destinations={destinations} setDestinations={setDestinations}></UpdateField>        
                             }  
                             {
                                 destinations.map((destination, index) => <div key={destination._id} className="col-12 bg-light mb-3 p-3 d-flex justify-content-between">
