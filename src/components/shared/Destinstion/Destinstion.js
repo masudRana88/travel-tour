@@ -6,7 +6,6 @@ import { DestinationContext } from '../../../Context/DestinationProvider/Destina
 
 const Destinstion = () => {
     const { destinations } = useContext(DestinationContext);
-    console.log(destinations)
     return (
         <div className="container mt-lg-5 mt-md-3 mt-2">
             <div className="row">

@@ -16,6 +16,9 @@ import UpdateContext from './Context/UpdateContext/UpdateContext';
 import DestinationProvider from './Context/DestinationProvider/DestinationProvider';
 import Footer from './components/shared/Footer/Footer';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
+import Page404 from './components/pages/404/Page404';
+import PrivateRouter from './Hooks/PrivateRouter';
+import LoginPage from './components/pages/LoginPage/LoginPage';
 
 function App() {
   return (
@@ -35,14 +38,20 @@ function App() {
           <Route exact path="/destinations">
             <Destinations></Destinations>
           </Route>
-          <Route exact path="/my-booking">
+          <PrivateRouter exact path="/my-booking">
             <MyBooking></MyBooking>
-          </Route>
+          </PrivateRouter>
           <Route exact path="/admin">
             <Admin></Admin>
           </Route>
-          <Route exact path="/booking/:id">
+          <PrivateRouter exact path="/booking/:id">
             <BookNow></BookNow>
+          </PrivateRouter>
+          <Router exact path="/login">
+            <LoginPage></LoginPage>        
+          </Router>
+          <Route  path="*">
+            <Page404></Page404>
           </Route>
           </Switch>
             <Footer></Footer>

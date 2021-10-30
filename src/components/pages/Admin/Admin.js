@@ -47,9 +47,9 @@ const Admin = () => {
     return (
         <div className="container-fluid row">
             <div className="col-lg-4 col-md-4 col-12 mt-5">
-                <ul class="list-group">
-                    <button onClick={hendleAddDestination} class={addDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'} aria-current="true">Add Tour</button>
-                    <button onClick={hendleEditDestination} class={editDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'}>Edit Tour</button>
+                <ul className="list-group">
+                    <button onClick={hendleAddDestination} className={addDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'} aria-current="true">Add Tour</button>
+                    <button onClick={hendleEditDestination} className={editDestination? 'list-group-item nav-link admin-nav active' : 'list-group-item nav-link admin-nav'}>Edit Tour</button>
                 </ul>
             </div>
             <div className="col-lg-8 col-md-8 col-12">
@@ -58,22 +58,22 @@ const Admin = () => {
                     {
                        addDestination && <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
                              {/* Name */}
-                        <div class="mb-3">
-                            <label class="form-label">Tour name</label>
-                            <input type="text" defaultValue="" {...register("name", { required: true })} placeholder="Type Destination name" class="form-control"/>
+                        <div className="mb-3">
+                            <label className="form-label">Tour name</label>
+                            <input type="text" defaultValue="" {...register("name", { required: true })} placeholder="Type Destination name" className="form-control"/>
                         </div>
                             {/* description */}
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea type="text" defaultValue="" {...register("description", { required: true })} class="form-control"/>
+                        <div className="mb-3">
+                            <label htmlFor="description" className="form-label">Description</label>
+                            <textarea type="text" defaultValue="" {...register("description", { required: true })} className="form-control"/>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Price</label>
-                            <input type="number" defaultValue="" {...register("price", { required: true })} class="form-control"/>
+                        <div className="mb-3">
+                            <label className="form-label">Price</label>
+                            <input type="number" defaultValue="" {...register("price", { required: true })} className="form-control"/>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Image Link</label>
-                            <input type="text" defaultValue="" {...register("img", { required: true })} class="form-control"/>
+                        <div className="mb-3">
+                            <label className="form-label">Image Link</label>
+                            <input type="text" defaultValue="" {...register("img", { required: true })} className="form-control"/>
                         </div>
                         <input type="submit" />
                     </form>            
@@ -90,7 +90,7 @@ const Admin = () => {
                                     <button className="btn bg-info text-light" onClick={()=>hendleUpdate(destination._id)}>
                                         Update
                                     </button>
-                                    <button className="btn bg-danger text-light fs-5 ms-2" onClick={()=>hendelDelete(destination._id)}><i class="bi bi-trash-fill"></i></button>
+                                    <button className="btn bg-danger text-light fs-5 ms-2" onClick={()=>hendelDelete(destination._id)}><i className="bi bi-trash-fill"></i></button>
                                 </div>
                             </div>)        
                             }

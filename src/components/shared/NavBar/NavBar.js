@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const NavBar = () => {
-    const {user,logOut, singInWithGoogle} = useAuth()
+    const {user, singInWithGoogle, logOut} = useAuth()
     return (
         <div className="w-100 bg-light">
             <nav className="ms-1 navbar navbar-expand-lg navbar-light ">
@@ -25,8 +25,11 @@ const NavBar = () => {
                     <li className="nav-item">
                     <NavLink to="/my-booking" className="nav-link ">My Booking</NavLink>
                     </li>
-                 </ul>
-                    <button className="btn" onClick={singInWithGoogle}>Login</button>
+                    </ul>
+                    <p className="my-auto">{user && user.displayName}</p>
+                    {
+                        user.email?<button className="btn" onClick={logOut}>Log out</button>  :  <button className="btn" onClick={singInWithGoogle}>Login</button>      
+                    } 
                     <Link to="/admin"><button className="btn ms-2">Admin</button></Link>
                 </div>
             </div>
