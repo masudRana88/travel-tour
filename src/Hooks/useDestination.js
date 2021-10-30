@@ -5,11 +5,11 @@ const useDestination = () => {
 
     // call api
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/masudRana88/assignmentDB/master/travel-tour/destinations.js')
+        fetch('http://localhost:5000/destinations')
         .then(rsc => rsc.json())
         .then(data => setDestinations(data))
     }, [])
-     return { destinations }
+     return { destinations, setDestinations }
 }
 
 export default useDestination;
