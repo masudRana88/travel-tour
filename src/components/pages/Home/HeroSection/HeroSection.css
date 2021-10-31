@@ -22,6 +22,14 @@
   background-size: cover;
   position: relative;
 }
+.offer-BGimg{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://user-images.githubusercontent.com/86189450/139319755-42aa9e5e-310c-47b0-9975-69eacb71d8bd.jpg");
+    height: 100vh;
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 .hero-contant{
     text-align: center;
     position: absolute;

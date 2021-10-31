@@ -19,6 +19,7 @@ import AuthProvider from './Context/AuthProvider/AuthProvider';
 import Page404 from './components/pages/404/Page404';
 import PrivateRouter from './Hooks/PrivateRouter';
 import LoginPage from './components/pages/LoginPage/LoginPage';
+import AboutUs from './components/pages/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -49,6 +50,9 @@ function App() {
           </PrivateRouter>
           <Router exact path="/login">
             <LoginPage></LoginPage>        
+          </Router>
+          <Router exact path="/aboutus">
+            <AboutUs></AboutUs>        
           </Router>
           <Route  path="*">
             <Page404></Page404>

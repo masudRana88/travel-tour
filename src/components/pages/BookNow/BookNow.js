@@ -34,7 +34,7 @@ const BookNow = () => {
     }, [])
     let history = useHistory();
     return (
-        <div className="row container-fluid">
+        <div className="row container-fluid h-m-100vh">
             <div className="col-lg-6 col-m-6 col-sm-12">
                 <img src={destination.img} className="img-fluid" />
             </div>

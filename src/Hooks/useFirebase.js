@@ -8,10 +8,12 @@ const useFirebase = () => {
     const [user, setUser] = useState({})
     const [isLoding, setIsLoding] = useState(true);
     const provider = new GoogleAuthProvider();
-
+    
     const auth = getAuth();
+    //go back to your location
+
     // Login with google
-    const singInWithGoogle = () => {
+    const singInWithGoogle = (pathName, history) => {
         setIsLoding(true)
         signInWithPopup(auth, provider)
         .then((result) => {
@@ -21,7 +23,11 @@ const useFirebase = () => {
         }).catch((error) => {
         
         })
-        .finally(()=>setIsLoding(false))
+            .finally(() => {
+                setIsLoding(false)
+                console.log(pathName)
+                // history.push(pathName.pathname)
+            })
     }
 
     // Logout

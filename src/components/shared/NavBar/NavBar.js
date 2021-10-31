@@ -23,12 +23,17 @@ const NavBar = () => {
                     <NavLink to="/destinations" className="nav-link ">Tour List</NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink to="/my-booking" className="nav-link ">My Booking</NavLink>
+                    <NavLink to="/aboutus" className="nav-link ">About us</NavLink>
                     </li>
+                    {
+                        user.email && <li className="nav-item">
+                    <NavLink to="/my-booking" className="nav-link ">My Booking</NavLink>
+                    </li>            
+                    }
                     </ul>
                     <p className="my-auto">{user && user.displayName}</p>
                     {
-                        user.email?<button className="btn" onClick={logOut}>Log out</button>  :  <button className="btn" onClick={singInWithGoogle}>Login</button>      
+                        user.email?<button className="btn bg-danger ms-2 text-light" onClick={logOut}>Log out</button>  :  <button className="btn" onClick={singInWithGoogle}>Login</button>      
                     } 
                     <Link to="/admin"><button className="btn ms-2">Admin</button></Link>
                 </div>

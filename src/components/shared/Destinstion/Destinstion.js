@@ -11,13 +11,15 @@ const Destinstion = () => {
             <div className="row">
                 <h1>Popular Tour Packages</h1>
                 {
-                    destinations.map(destination => <div className="col-4 g-4">
+                    destinations.map(destination => <div className="col-lg-4 col-md-6 col-12  g-4">
                         <div class="card">
                         <img src={destination.img} class="card-img-top" alt="" style={{ height: '15rem'}}/>
                         <div class="card-body">
                                 <h5 class="card-title">{ destination.name}</h5>
                                 <p class="card-text">{destination.description?.slice(0,100) }</p>
-                            <NavLink to={`/booking/${destination?._id}`} class="btn btn-primary">Book Now</NavLink>
+                            <div className="d-flex">
+                                <NavLink to={`/booking/${destination?._id}`} class="btn btn-primary">Book Now</NavLink> <h5 className="ms-3">${destination.price} </h5>       
+                            </div>
                         </div>
                     </div>
                     </div>)        
