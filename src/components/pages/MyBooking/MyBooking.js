@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import "./MyBooking.css"
 const MyBooking = () => {

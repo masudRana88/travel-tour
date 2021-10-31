@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import { DestinationContext } from '../../../../Context/DestinationProvider/DestinationProvider';
 import { UpdateFieldContext } from '../../../../Context/UpdateContext/UpdateContext';
 
