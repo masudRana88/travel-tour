@@ -20,7 +20,6 @@ const UpdateFields = () => {
                 alert('Update Secssfull !!')
                 setIsUpdate(false)
                 // const reminder = destinations.filter(destination => destination._id !== id);
-                console.log(response.data)
              }
         })
     };
