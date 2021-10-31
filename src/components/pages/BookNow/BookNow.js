@@ -16,7 +16,7 @@ const BookNow = () => {
         data.status = "painding"
         data.bookingName = destination.name;
         console.log(data)
-        axios.post("http://localhost:5000/manage-oder", data)
+        axios.post("https://spooky-ghost-45637.herokuapp.com/manage-oder", data)
         .then(function (response) {
         if (response.status === 200) {
             alert('Booking successful !!')
@@ -27,7 +27,7 @@ const BookNow = () => {
     };
     // get DATA
     useEffect(() => {
-        axios.get(`http://localhost:5000/destinations/${id}`)
+        axios.get(`https://spooky-ghost-45637.herokuapp.com/destinations/${id}`)
         .then(function (response) {
             setDestination(response.data)
         })

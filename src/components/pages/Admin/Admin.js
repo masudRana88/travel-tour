@@ -16,7 +16,7 @@ const Admin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
-           axios.get("http://localhost:5000/order")
+           axios.get("https://spooky-ghost-45637.herokuapp.com/order")
                .then(function (response) {
                 setAllOrder(response.data)
             });
@@ -24,7 +24,7 @@ const Admin = () => {
 
     // hendel OnSubmit
     const onSubmit = data => {
-        axios.post('http://localhost:5000/destinations', data)
+        axios.post('https://spooky-ghost-45637.herokuapp.com/destinations', data)
         .then(function (response) {
             if (response.status === 200) {
                 reset()
@@ -53,7 +53,7 @@ const Admin = () => {
     const hendelDeleteTour = id => {
         const confirm = window.confirm('Are you suer to Delete this item')
         if (confirm) {
-            axios.delete(`http://localhost:5000/destinations/${id}`)
+            axios.delete(`https://spooky-ghost-45637.herokuapp.com/destinations/${id}`)
         .then(function (response) {
             // handle success
             console.log(response.status === 200);
@@ -66,7 +66,7 @@ const Admin = () => {
     const hendleDeleteOrder = (id) => {
         const confirm = window.confirm('Are you suer to Delete this item')
         if (confirm) {
-            axios.delete(`http://localhost:5000/manage-oder/${id}`)
+            axios.delete(`https://spooky-ghost-45637.herokuapp.com/manage-oder/${id}`)
         .then(function (response) {
             // handle success
             console.log(response.status === 200);
@@ -80,7 +80,7 @@ const Admin = () => {
          const confirm = window.confirm('Are you suer to Approve this item')
         if (confirm) {
             console.log()
-            axios.patch(`http://localhost:5000/manage-oder/${id}`, )
+            axios.patch(`https://spooky-ghost-45637.herokuapp.com/manage-oder/${id}`, )
         .then(function (response) {
             // handle success
             console.log(response.status === 200);

@@ -9,7 +9,7 @@ const MyBooking = () => {
     const [allBoking, setAllBooking] = useState([])
     useEffect(() => {
         const email = user?.email;
-        axios.get(`http://localhost:5000/manage-oder/${email}`)
+        axios.get(`https://spooky-ghost-45637.herokuapp.com/manage-oder/${email}`)
             .then(function (response) {
                 setAllBooking(response.data)
             });
@@ -18,7 +18,7 @@ const MyBooking = () => {
     const hendelDelete = id => {
         const confirm = window.confirm('Are you suer to Delete this item')
         if (confirm) {
-            axios.delete(`http://localhost:5000/manage-oder/${id}`)
+            axios.delete(`https://spooky-ghost-45637.herokuapp.com/manage-oder/${id}`)
         .then(function (response) {
             // handle success
             console.log(response.status === 200);

@@ -12,7 +12,7 @@ const UpdateFields = () => {
     const {destinations, setDestinations} = useContext(DestinationContext);
     const [courentDestination, setCourentDestination] = useState({})
     const onSubmit = data => {
-        axios.patch(`http://localhost:5000/destinations/update/${id}`, data)
+        axios.patch(`https://spooky-ghost-45637.herokuapp.com/destinations/update/${id}`, data)
             .then(function (response) {
             console.log(response)
             if (response.status === 200) {
@@ -25,7 +25,7 @@ const UpdateFields = () => {
         })
     };
     useEffect(() => {
-        fetch(`http://localhost:5000/destinations/${id}`)
+        fetch(`https://spooky-ghost-45637.herokuapp.com/destinations/${id}`)
         .then(rsc => rsc.json())
         .then(data => setCourentDestination(data))
         

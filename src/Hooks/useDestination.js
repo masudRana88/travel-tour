@@ -5,7 +5,7 @@ const useDestination = () => {
 
     // call api
     useEffect(() => {
-        fetch('http://localhost:5000/destinations')
+        fetch('https://spooky-ghost-45637.herokuapp.com/destinations')
         .then(rsc => rsc.json())
         .then(data => setDestinations(data))
     }, [])
