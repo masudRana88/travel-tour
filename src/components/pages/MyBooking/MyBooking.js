@@ -37,14 +37,14 @@ const MyBooking = () => {
                 <h5>{index + 1} {booking.bookingName}</h5>
                 <div className="d-flex">
                     <h5 className="text-info me-3">{booking.status}</h5>
-                    <button onClick={()=>hendelDelete(booking._id)} className="btn bg-danger text-light fs-5 ms-2" ><i class="bi bi-trash-fill"></i></button>
+                    <button onClick={()=>hendelDelete(booking._id)} className="btn bg-danger text-light fs-5 ms-2" ><i className="bi bi-trash-fill"></i></button>
                 </div>
             </div>)        
             }
             </div> :
             <div className="w-100 text-center mt-5">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>     
             </div>        
             }

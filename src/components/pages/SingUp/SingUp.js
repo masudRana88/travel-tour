@@ -1,32 +1,34 @@
-import React, { useRef, useState } from 'react';
-import useHistory  from 'react';
-import { useLocation, useNavigate,NavLink } from 'react-router-dom';
+import React, {useState} from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import "./LoginPage.css"
 import LoginImage from "../../../images/login2.svg"
 import Spiner from '../../shared/Spiner/Spiner';
 
-const LoginPage = () => {
-    const { singInWithGoogle,logInWithEmail,user,isLoding } = useAuth()
+const SingUp = () => {
+    const { singInWithGoogle, singUpWithEmail, user, isLoding } = useAuth()
+    
     const location = useLocation()
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || "/"
+
     const [email, setEmail] = useState("")
+    const [name, setName] = useState("")
     const [password, setPassword] = useState("")
 
+    // goBack
     const goBack = () => {
         navigate(from)
     }
-
-    const handleLoginbtn = (event) => {
+    console.log(from)
+    // Sine up
+    const hendleSingUp = (event) => {
         event.preventDefault();
-        logInWithEmail(email, password, goBack)
-        
+        singUpWithEmail(email,password,name,goBack)
     }
+    // Google Login
     const hendleGoogleLogin = () => {
         singInWithGoogle(goBack)
     }
-    console.log(isLoding)
     return (
         <div className="container alert alert-dismissible alert-primary my-5">
             <div className="row">
@@ -35,11 +37,16 @@ const LoginPage = () => {
                 </div>
                 <div className="col-sm-12 col-md-6">
                     <h3 className="text-center mt-3">Please Login</h3>
+                    {/* Form */}
                     
-                    <form className="my-auto" onSubmit={handleLoginbtn}>
-                        
-                        {isLoding ? <Spiner/> : <>
+                    <form className="my-auto" onSubmit={hendleSingUp}>
+                         
+                        {isLoding ? <Spiner /> : <>
                             <div className="mb-3 mt-4">
+                            <label for="exampleName" className="form-label">Name</label>
+                            <input type="text" className="form-control" id="exampleName" placeholder="Enter your Name" onBlur={(e)=>setName(e.target.value) } required/>
+                        </div>
+                         <div className="mb-3 mt-4">
                             <label for="exampleInputEmail1" className="form-label">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter your Email" onBlur={(e)=>setEmail(e.target.value) } required/>
                         </div>
@@ -48,11 +55,10 @@ const LoginPage = () => {
                             <input type="text" className="form-control" id="exampleInputPass" placeholder="Enter your password" onBlur={(e) => setPassword(e.target.value)} required/>
                         </div>
                         </>}
-                        
                          <div className="mb-3 mt-4">
-                            <input className="btn btn-outline-primary" type="submit" value="Login" />
+                            <input className="btn btn-outline-primary" type="submit" value="Sing Up" />
                         </div>
-                        <NavLink to="/singup" className="nav-link p-0"><p>Create An Account ...</p></NavLink>
+                        <NavLink to="/login" className="nav-link p-0"><p>Have an Acconnt ...</p></NavLink>
                         <hr />
                     </form>
                     <div className="d-grid">
@@ -64,7 +70,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
-
-
-{/* <button className="btn mx-auto shadow" onClick={()=>handleLoginbtn(from)}><i className="bi bi-google"></i> Login With Google</button> */}
+export default SingUp;

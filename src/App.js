@@ -1,10 +1,8 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-  
+  BrowserRouter,
+  Routes,
+  Route
 } from "react-router-dom";
 import HomePage from './components/pages/Home/HomePage/HomePage';
 import Destinations from './components/pages/Destinations/Destinations';
@@ -20,6 +18,7 @@ import Page404 from './components/pages/404/Page404';
 import PrivateRouter from './Hooks/PrivateRouter';
 import LoginPage from './components/pages/LoginPage/LoginPage';
 import AboutUs from './components/pages/AboutUs/AboutUs';
+import SingUp from './components/pages/SingUp/SingUp';
 
 function App() {
   return (
@@ -27,39 +26,22 @@ function App() {
       <AuthProvider>
       <DestinationProvider>
       <UpdateContext>
-        <Router>
-        <NavBar></NavBar>
-        <Switch>
-          <Route exact path="/">
-            <HomePage></HomePage>
-          </Route>
-          <Route exact path="/home">
-            <HomePage></HomePage>
-          </Route>
-          <Route exact path="/destinations">
-            <Destinations></Destinations>
-          </Route>
-          <PrivateRouter exact path="/my-booking">
-            <MyBooking></MyBooking>
-          </PrivateRouter>
-          <Route exact path="/admin">
-            <Admin></Admin>
-          </Route>
-          <PrivateRouter exact path="/booking/:id">
-            <BookNow></BookNow>
-          </PrivateRouter>
-          <Router exact path="/login">
-            <LoginPage></LoginPage>        
-          </Router>
-          <Router exact path="/aboutus">
-            <AboutUs></AboutUs>        
-          </Router>
-          <Route  path="*">
-            <Page404></Page404>
-          </Route>
-          </Switch>
-            <Footer></Footer>
-          </Router>
+    <BrowserRouter>
+          <NavBar></NavBar>   
+      <Routes>
+        <Route path="/" element={<HomePage></HomePage>} />
+        <Route path="/home" element={<HomePage></HomePage>} />
+        <Route path="/destinations" element={<Destinations/>} />
+        <Route path="/my-booking" element={<MyBooking/>} />
+        <Route path="/admin" element={<PrivateRouter><Admin/></PrivateRouter>} />
+        <Route path="/booking/:id" element={<PrivateRouter><BookNow/></PrivateRouter>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/singup" element={<SingUp/>} />
+        <Route path="/aboutus" element={<AboutUs/>} />
+        <Route path="*" element={<Page404/>} />
+      </Routes>
+          <Footer></Footer>
+    </BrowserRouter>
       </UpdateContext>
       </DestinationProvider>
       </AuthProvider>

@@ -124,7 +124,7 @@ const Admin = () => {
                             <label className="form-label">Image Link</label>
                             <input type="text" defaultValue="" {...register("img", { required: true })} className="form-control"/>
                         </div>
-                        <input type="submit" value="Uplode" className="btn bg-info"/>
+                        <input type="submit" value="Uplode" className="btn btn-outline-primary"/>
                     </form>            
                     }
                     {
@@ -136,7 +136,7 @@ const Admin = () => {
                                 destinations.map((destination, index) => <div key={destination._id} className="col-12 bg-light mb-3 p-3 d-flex justify-content-between">
                                 <h5>{index + 1} {destination.name}</h5>
                                 <div>
-                                    <button className="btn bg-info text-light" onClick={()=>hendleUpdate(destination._id)}>
+                                    <button className="btn btn-outline-primary text-dark" onClick={()=>hendleUpdate(destination._id)}>
                                         Update
                                     </button>
                                     <button className="btn bg-danger text-light fs-5 ms-2" onClick={()=>hendelDeleteTour(destination._id)}><i className="bi bi-trash-fill"></i></button>

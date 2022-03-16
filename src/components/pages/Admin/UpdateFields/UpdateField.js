@@ -35,28 +35,28 @@ const UpdateFields = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
                              {/* Name */}
                         {
-                        courentDestination.name && <div class="mb-3">
-                            <label class="form-label">Destination name</label>
-                            <input type="text" defaultValue={courentDestination.name} {...register("name")} placeholder="Type Destination name" class="form-control"/>
+                        courentDestination.name && <div className="mb-3">
+                            <label className="form-label">Destination name</label>
+                            <input type="text" defaultValue={courentDestination.name} {...register("name")} placeholder="Type Destination name" className="form-control"/>
                         </div>
                         }
                             {/* description */}
                         { 
-                        courentDestination?.description&& <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea type="text" defaultValue={courentDestination.description} {...register("description")} class="form-control"/>
+                        courentDestination?.description&& <div className="mb-3">
+                            <label for="description" className="form-label">Description</label>
+                            <textarea type="text" defaultValue={courentDestination.description} {...register("description")} className="form-control"/>
                         </div>
                         }
                         {
-                        courentDestination?.price&& <div class="mb-3">
-                            <label class="form-label">Price</label>
-                            <input type="number" defaultValue={courentDestination.price} {...register("price")} class="form-control"/>
+                        courentDestination?.price&& <div className="mb-3">
+                            <label className="form-label">Price</label>
+                            <input type="number" defaultValue={courentDestination.price} {...register("price")} className="form-control"/>
                         </div>
                         }
                         {
-                        courentDestination?.img&& <div class="mb-3">
-                            <label class="form-label">Image Link</label>
-                            <input type="text" defaultValue={courentDestination.img} {...register("img")} class="form-control"/>
+                        courentDestination?.img&& <div className="mb-3">
+                            <label className="form-label">Image Link</label>
+                            <input type="text" defaultValue={courentDestination.img} {...register("img")} className="form-control"/>
                         </div>
                         }
                         

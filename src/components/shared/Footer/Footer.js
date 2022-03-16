@@ -10,9 +10,9 @@ const Footer = () => {
                 </div>
                 <div className="col-md-4 col-sm-12 me-md-2 me-lg-2">
                     <h6>Links</h6>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-dark"><NavLink to="/destinations" className="nav-link">Tour list</NavLink></li>
-                        <li class="list-group-item bg-dark"><NavLink to="/my-booking" className="nav-link">Your Booking</NavLink></li>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item bg-dark"><NavLink to="/destinations" className="nav-link">Tour list</NavLink></li>
+                        <li className="list-group-item bg-dark"><NavLink to="/my-booking" className="nav-link">Your Booking</NavLink></li>
                         
                     </ul>
                 </div>
@@ -20,12 +20,12 @@ const Footer = () => {
                     <div className="d-flex w-100">
                         <div className="justify-content-end">
                             <h5>Contact</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item text-light bg-dark"><i class="bi bi-telephone-outbound"></i> 088 1836 5972</li>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item text-light bg-dark"><i className="bi bi-telephone-outbound"></i> 088 1836 5972</li>
 
-                                <li class="list-group-item text-light bg-dark"><i class="bi bi-envelope"></i> sappot@gmaial.com</li>
+                                <li className="list-group-item text-light bg-dark"><i className="bi bi-envelope"></i> sappot@gmaial.com</li>
 
-                                <li class="list-group-item text-light bg-dark"> <i class="bi bi-geo-alt"></i> 66 broklyn golden street line New York, USA</li>
+                                <li className="list-group-item text-light bg-dark"> <i className="bi bi-geo-alt"></i> 66 broklyn golden street line New York, USA</li>
                             </ul>
                         </div>
                     </div>
